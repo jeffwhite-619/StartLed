@@ -20,8 +20,7 @@ class StartLed:
         self.startled()
 
     def get_args(self):
-        self.args = StartLedArgumentParser().args_dict
-        print(self.args)        
+        self.args = StartLedArgumentParser().args_dict       
         if not self.args or None == self.args['led']:
             self.get_args_from_input()
     
@@ -39,7 +38,6 @@ class StartLed:
         self.close()
 
     def get_args_from_input(self):
-        print(self.args)
         self.args['led'] = int(input("LED number: "))
         self.args['toggle'] = int(input("Toggle on (1) or off (0): "))
         if self.args['toggle'] == 1:
